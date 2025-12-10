@@ -45,7 +45,8 @@ class _LogWidState extends State<LogWid> {
             .toList();
       });
     } catch (e) {
-
+      ScaffoldMessenger.of(context).showSnackBar(
+           SnackBar(content: Text("Error${e.toString}")));
     }
 
     if (_emailController.text.isEmpty == true ||
