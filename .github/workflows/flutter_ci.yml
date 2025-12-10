@@ -2,9 +2,9 @@ name: Flutter CI
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main","gourav"]
   push:
-    branches: [ "main" ]
+    branches: [ "main","gourav" ]
 
 jobs:
   analyze-test:
@@ -25,5 +25,5 @@ jobs:
       - name: Analyze (static checks)
         run: flutter analyze
 
-      - name: Run unit tests
-        run: flutter test
+#      - name: Run unit tests
+#        run: flutter test

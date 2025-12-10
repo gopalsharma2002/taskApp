@@ -18,7 +18,7 @@ class TodoItem extends StatefulWidget {
 class _TodoItemState extends State<TodoItem> {
   String? id;
   TextEditingController addTask = TextEditingController();
-  var _editTask = TextEditingController();
+  final _editTask = TextEditingController();
 
   List<Todos> todolists = [
     Todos(id: '12', task: "Demo task", isChecked: false)
@@ -59,18 +59,18 @@ class _TodoItemState extends State<TodoItem> {
 
   Future<void> read() async {
     // var  todo=FirebaseFirestore.instance.collection('todos').snapshots();
-    var todo = await FirebaseFirestore.instance
+    var todo = FirebaseFirestore.instance
         .collection('users')
         .doc(id)
         .collection("todos")
         .snapshots();
     todo.forEach((element) {
-      element.docs.forEach((data) {
+      for (var data in element.docs) {
         setState(() {
           todolists
               .add(Todos(task: data['task'], id: data.id, isChecked: true));
         });
-      });
+      }
     });
   }
 

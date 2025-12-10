@@ -114,12 +114,12 @@ class _SignWidState extends State<SignWid> {
                             _obs ? Icons.visibility_off : Icons.visibility),
                         color: const Color.fromARGB(255, 247, 85, 73),
                       ),
-                      prefixIcon: Icon(
+                      prefixIcon: const Icon(
                         Icons.lock,
                         color: Colors.red,
                       ),
                       hintText: 'password',
-                      border: UnderlineInputBorder()),
+                      border: const UnderlineInputBorder()),
                 ),
               ),
               const SizedBox(

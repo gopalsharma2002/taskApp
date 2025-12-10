@@ -22,12 +22,12 @@ class _LogWidState extends State<LogWid> {
       users.forEach((element) {
         element.docs
             .map((data) => {
-                  print(data['email'] + " " + data['password']),
+
                   if (data['email'] == _emailController.text)
                     {
                       if (data["password"] == _passController.text)
                         {
-                          print(data['password']),
+
                           Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -45,7 +45,8 @@ class _LogWidState extends State<LogWid> {
             .toList();
       });
     } catch (e) {
-      print(e.toString());
+      ScaffoldMessenger.of(context).showSnackBar(
+           SnackBar(content: Text("Error${e.toString}")));
     }
 
     if (_emailController.text.isEmpty == true ||
