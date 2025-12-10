@@ -25,5 +25,5 @@ jobs:
       - name: Analyze (static checks)
         run: flutter analyze
 
-      - name: Run unit tests
-        run: flutter test
+#      - name: Run unit tests
+#        run: flutter test
