@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:todo/widgets/todo_item.dart';
 
 class Todo extends StatelessWidget {
-  String userId;
-  Todo({
+  final String userId;
+  const Todo({
     required this.userId,
     super.key,
   });
